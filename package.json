@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/wichofly/movie-api/issues"
   },
-  "homepage": "https://github.com/wichofly/movie-api#readme"
+  "homepage": "https://github.com/wichofly/movie-api#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
