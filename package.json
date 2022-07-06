@@ -20,5 +20,8 @@
   "homepage": "https://github.com/wichofly/movie-api#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
   }
 }
