@@ -72,6 +72,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/documentation', (req, res) => {
+    /* try {
+        throw new Error({ stack: 'ere' });
+    } catch (error) {
+        next(error)
+    }*/
     res.sendFile('public/documentation.html', { root: __dirname });
 });
 
