@@ -13,7 +13,7 @@ const app = express();
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
 
-app.use(morgan('combined', { stream: accessLogStream })); // setup the logger, Mildware function
+app.use(morgan('combined')); // setup the logger, Mildware function to the terminal
 
 app.use(express.static('public')); // Automatically routes all requests for static files to their corresponding files within a certain folder on the server
 
