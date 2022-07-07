@@ -17,11 +17,11 @@ app.use(morgan('combined')); // setup the logger, Mildware function to the termi
 
 app.use(express.static('public')); // Automatically routes all requests for static files to their corresponding files within a certain folder on the server
 
-app.use(bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({ //support parsing of application/x-www-form-urlencoded post data
     extended: true
 }));
 
-app.use(bodyParser.json()); // 
+app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(methodOverride());
 
 let topMovies = [
