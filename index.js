@@ -24,11 +24,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json()); // 
 app.use(methodOverride());
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke! Sorry...')
-})
-
 let topMovies = [
     {
         title: 'The Shawshank Redemption',
@@ -90,6 +85,11 @@ app.get('/secreturl', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send(`I don't know that path!`)
+})
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke! Sorry...')
 })
 
 app.listen(8080, () => {
