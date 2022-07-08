@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Documentation</title>
 </head>
 
@@ -21,6 +23,161 @@
             personal information, and create a list of their favorite movies.
         </p>
     </div>
+
+    <div class="container">
+        <table class="table table-bordered ">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">HTTP Method</th>
+                    <th scope="col">Requests body data format</th>
+                    <th scope="col">Requests body data format</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Allow new users to register</td>
+                    <td>/users</td>
+                    <td>POST</td>
+                    <td>A JSON object holding data about the user to add, structured like: <br>
+                        <span class="text-primary">
+                            {
+                            "name": "Francisco", <br>
+                            "favoriteMovies": [ ]
+                            }
+                        </span>
+                    </td>
+                    <td>A JSON object holding data about the user that was added, including an ID: <br>
+                        <span class="text-primary">
+                            {
+                            "name": "Francico", <br>
+                            "favoriteMovies": [], <br>
+                            "id": "2fa77ba2-f547-484f-b62e-ee020649d4c9"
+                            }
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been
+                        added)</td>
+                    <td>/users/:id/:movieTitle</td>
+                    <td>POST</td>
+                    <td>None</td>
+                    <td>A text message indicates weather the favorite movie has been successfully added to user's list
+                    </td>
+                </tr>
+                <tr>
+                    <td>Return a list of ALL movies to the user</td>
+                    <td>/movies</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about all the movies</td>
+                </tr>
+                <tr>
+                    <td>Return data about a single movie by title to the user</td>
+                    <td>/movies/:title</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single movie <br>
+                        <span class="text-primary">
+                            {
+                            "title": "Matrix", <br>
+                            "description": "", <br>
+                            "genre": { <br>
+                            "name": "",
+                            "description": "" <br>
+                            },
+                            "director": { <br>
+                            "name": "Lana Wachowski", <br>
+                            "bio": "", <br>
+                            "birth": "" <br>
+                            }
+                            }
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Return data about a single movie by genre to the user</td>
+                    <td>/movies/genre/:genreName</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single movie <br>
+                        <span class="text-primary">
+                            {
+                            "name": "Drama", <br>
+                            "description": "In film and television, drama is a category or genre of narrative fiction
+                            (or semi-fiction) intended to be more serious than humorous in tone." <br>
+                            }
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Return data about a single movie by director to the user</td>
+                    <td>/movies/directors/:directorName</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single movie <br>
+                        <span class="text-primary">
+                            {
+                            "name": "Frank Darabont", <br>
+                            "bio": "Frank Darabont is a Hungarian-American director, producer, and screenwriter. He is
+                            best known for his film adaptations of Stephen King stories, including The Shawshank
+                            Redemption, The Green Mile, and The Mist. He also works as a producer, producing such
+                            television shows as The Walking Dead and Mob City.", <br>
+                            "birth": "January 28, 1959 in Montbéliard, Doubs, France"
+                            }
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Allow users to update their user info (username)</td>
+                    <td>/users/:id</td>
+                    <td>PUT</td>
+                    <td>A JSON object holding data about the user to update, structured like: <br>
+                        <span class="text-primary">
+                            {
+                            "name": "Antony Updated Name", <br>
+                            "favoriteMovies": []
+                            }
+                        </span>
+                    </td>
+                    <td>A JSON object holding data about teh user update <br>
+                        <span class="text-primary">
+                            {
+                            "id": 1, <br>
+                            "name": "Antony Updated Name", <br>
+                            "favoriteMovies": [
+                            "Cars"
+                            ]
+                            }
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has
+                        been removed)</td>
+                    <td>/users/:id/:movieTitle</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>A text message including weather the favorite movie has been successfully deleted to user's list
+                    </td>
+                </tr>
+                <tr>
+                    <td>Allow existing users to deregister (showing only a text that a user email has been removed)</td>
+                    <td>/users/:id</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>A text message indicates weather the existing user has been successfully deleted</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
