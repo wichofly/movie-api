@@ -6,6 +6,7 @@ const express = require('express'),
 
 const bodyParser = require('body-parser'),
     methodOverride = require('method-override');
+const { send } = require('process');
 
 const app = express();
 
@@ -25,10 +26,15 @@ app.use(bodyParser.urlencoded({ //support parsing of application/x-www-form-urle
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(methodOverride());
 
-let topMovies = [
+let movies = [
     {
         title: 'The Shawshank Redemption',
-        director: 'Stephen King'
+        description: 'It tells the story of banker, who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence.',
+        genre: {
+            name: 'Drama',
+            description: 'In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone.',
+        },
+        director: 'Stephen King',
     },
     {
         title: 'Lord of the Rings',
@@ -81,9 +87,35 @@ app.get('/documentation', (req, res) => {
     res.sendFile('public/documentation.html', { root: __dirname });
 });
 
+// READ
 app.get('/movies', (req, res) => {
-    res.json(topMovies)
+    res.status(200).json(movies);
+    //res.json(movies)
 });
+
+// READ
+app.get('/movies/:title', (req, res) => {
+    const { title } = req.params;
+    const movie = movies.find(movie => movie.title === title);
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+})
+
+// READ
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find(movie => movie.genre.name === genreName).genre;
+
+    if (genre) {
+        res.status(200).json(genre);
+    } else {
+        res.status(400).send('no such genre')
+    }
+})
 
 app.get('/secreturl', (req, res) => {
     res.send('This is a secret url with super top-secret content.');
