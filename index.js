@@ -134,13 +134,13 @@ app.put('/users/:id', (req, res) => {
 
 // CREATE
 app.post('/users/:id/:movieTitle', (req, res) => {
-    const { id } = req.params;
+    const { id, movieTitle } = req.params;
 
-    
+
     let user = users.find(user => user.id == id);
 
     if (user) {
-        user.name = updateUser.name;
+        user.favoriteMovies.push(movieTitle);
         res.status(200).json(user);
     } else {
         res.status(400).send('no such user')
