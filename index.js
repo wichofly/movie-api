@@ -26,6 +26,19 @@ app.use(bodyParser.urlencoded({ //support parsing of application/x-www-form-urle
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(methodOverride());
 
+let users = [
+    {
+        id: 1,
+        name: 'Antonio',
+        favoriteMovies: []
+    },
+    {
+        id: 2,
+        name: 'Maria',
+        favoriteMovies: []
+    },
+]
+
 let movies = [
     {
         title: 'The Shawshank Redemption',
@@ -90,6 +103,19 @@ app.get('/documentation', (req, res) => {
     }*/
     res.sendFile('public/documentation.html', { root: __dirname });
 });
+
+// CREATE
+app.post('/users', (req, res)=>{
+    const newUser = req.body // is posible just for this code: "app.use(bodyParser.json())". is what enables us to read data from the body object
+
+    if ( newUser.name) {
+        newUser.id = uuid.v4();
+        users.push(newUser);
+        res.status(201).json(newUser);
+    } else {
+        res.status(400).send('users need names')
+    }
+})
 
 // READ
 app.get('/movies', (req, res) => {
