@@ -55,39 +55,120 @@ let movies = [
     },
     {
         title: 'Lord of the Rings',
-        director: 'J.R.R. Tolkien'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'J.R.R. Tolkien',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Coco',
-        director: 'Lee Unkrich'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Lee Unkrich',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Braveheart',
-        director: 'Randall Wallace'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Randall Wallace',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Midway',
-        director: 'Craig L. Symonds'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Craig L. Symonds',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Red Tails',
-        director: 'John Ridley'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'John Ridley',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Batman The Dark knight',
-        director: 'Christopher Nolan'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Christopher Nolan',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Matrix',
-        director: 'Lana Wachowski'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Lana Wachowski',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'John Wick',
-        director: 'Derek Kolstad'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Derek Kolstad',
+            bio: '',
+            birth: ''
+        }
     },
     {
         title: 'Forrest Gump',
-        director: 'Winston Groom'
+        description: '',
+        genre: {
+            name: '',
+            description: '',
+        },
+        director: {
+            name: 'Winston Groom',
+            bio: '',
+            birth: ''
+        }
     },
 ];
 
@@ -119,7 +200,7 @@ app.post('/users', (req, res) => {
 
 // CREATE
 app.post('/users/:id/:movieTitle', (req, res) => {
-    const { id, movieTitle } = req.params; 
+    const { id, movieTitle } = req.params;
 
     let user = users.find(user => user.id == id);
 
@@ -191,9 +272,9 @@ app.put('/users/:id', (req, res) => {
 // DELETE
 app.delete('/users/:id/:movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
-  
+
     let user = users.find(user => user.id == id);
-    
+
     if (user) {
         user.favoriteMovies = user.favoriteMovies.filter(title => title !== movieTitle)
         res.status(200).send(`${movieTitle} has been deleted from user ${id}'s array`);
@@ -205,9 +286,9 @@ app.delete('/users/:id/:movieTitle', (req, res) => {
 // DELETE
 app.delete('/users/:id', (req, res) => {
     const { id } = req.params;
-  
+
     let user = users.find(user => user.id == id);
-    
+
     if (user) {
         users = users.filter(user => user.id != id)
         res.status(200).send(`user ${id} has been deleted`);
