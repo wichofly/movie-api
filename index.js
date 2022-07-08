@@ -1,7 +1,8 @@
 const express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'), // import built in node modules fs and path
-    path = require('path');
+    path = require('path'),
+    uuid = require('uuid');
 
 const bodyParser = require('body-parser'),
     methodOverride = require('method-override');
@@ -27,43 +28,43 @@ app.use(methodOverride());
 let topMovies = [
     {
         title: 'The Shawshank Redemption',
-        author: 'Stephen King'
+        director: 'Stephen King'
     },
     {
         title: 'Lord of the Rings',
-        author: 'J.R.R. Tolkien'
+        director: 'J.R.R. Tolkien'
     },
     {
         title: 'Coco',
-        author: 'Lee Unkrich'
+        director: 'Lee Unkrich'
     },
     {
         title: 'Braveheart',
-        author: 'Randall Wallace'
+        director: 'Randall Wallace'
     },
     {
         title: 'Midway',
-        author: 'Craig L. Symonds'
+        director: 'Craig L. Symonds'
     },
     {
         title: 'Red Tails',
-        author: 'John Ridley'
+        director: 'John Ridley'
     },
     {
         title: 'Batman The Dark knight',
-        author: 'Christopher Nolan'
+        director: 'Christopher Nolan'
     },
     {
         title: 'Matrix',
-        author: 'Lana Wachowski'
+        director: 'Lana Wachowski'
     },
     {
         title: 'John Wick',
-        author: 'Derek Kolstad'
+        director: 'Derek Kolstad'
     },
     {
         title: 'Forrest Gump',
-        author: 'Winston Groom'
+        director: 'Winston Groom'
     },
 ];
 
