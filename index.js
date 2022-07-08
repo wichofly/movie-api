@@ -6,7 +6,7 @@ const express = require('express'),
 
 const bodyParser = require('body-parser'),
     methodOverride = require('method-override');
-const { send } = require('process');
+const { send, title } = require('process');
 
 const app = express();
 
@@ -30,7 +30,7 @@ let users = [
     {
         id: 1,
         name: 'Antonio',
-        favoriteMovies: []
+        favoriteMovies: ['Cars']
     },
     {
         id: 2,
@@ -149,13 +149,12 @@ app.post('/users/:id/:movieTitle', (req, res) => {
 // DELETE
 app.delete('/users/:id/:movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
-    const { movieName } = req.params;
-
+  
     let user = users.find(user => user.id == id);
     
     if (user) {
-        user.favoriteMovies.push(movieTitle);
-        res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
+        user.favoriteMovies = user.favoriteMovies.filter(title => title !== movieTitle)
+        res.status(200).send(`${movieTitle} has been deleted from user ${id}'s array`);
     } else {
         res.status(400).send('no such user')
     }
