@@ -34,7 +34,11 @@ let movies = [
             name: 'Drama',
             description: 'In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone.',
         },
-        director: 'Stephen King',
+        director: {
+            name: 'Frank Darabont',
+            bio: 'Frank Darabont is a Hungarian-American director, producer, and screenwriter. He is best known for his film adaptations of Stephen King stories, including The Shawshank Redemption, The Green Mile, and The Mist. He also works as a producer, producing such television shows as The Walking Dead and Mob City.',
+            birth: 'January 28, 1959 in Montbéliard, Doubs, France'
+        }
     },
     {
         title: 'Lord of the Rings',
@@ -114,6 +118,18 @@ app.get('/movies/genre/:genreName', (req, res) => {
         res.status(200).json(genre);
     } else {
         res.status(400).send('no such genre')
+    }
+})
+
+// READ
+app.get('/movies/directors/:directorName', (req, res) => {
+    const { directorName } = req.params;
+    const director = movies.find(movie => movie.director.name === directorName).director;
+
+    if (director) {
+        res.status(200).json(director);
+    } else {
+        res.status(400).send('no such director')
     }
 })
 
