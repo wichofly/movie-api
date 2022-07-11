@@ -29,27 +29,35 @@ app.use(methodOverride());
 let users = [
     {
         id: 1,
-        username: '',
-        password: '',
-        email: '',
-        birthday: '',
-        favoriteMovies: ['Cars'],
+        username: 'juliamaria123',
+        password: 'juliaamarillo0022',
+        email: 'juliamaria@gmail.com',
+        birthday: '18-04-1988',
+        favoriteMovies: ['Lord of the Rings'],
 
 
     },
     {
         id: 2,
-        username: '',
-        password: '',
-        email: '',
-        birthday: '',
+        username: 'elver_75',
+        password: 'iamthebest7788',
+        email: 'elver_75@gamil.com',
+        birthday: '20-07.1975',
+        favoriteMovies: [],
+    },
+    {
+        id: 3,
+        username: 'davidpower',
+        password: 'sanjuandeargentina0987',
+        email: 'david_elgrande@gamil.com',
+        birthday: '02-06.1996',
         favoriteMovies: [],
     },
 ]
 
 let movies = [
     {
-        id: '',
+        id: '1',
         title: 'The Shawshank Redemption',
         description: 'It tells the story of banker, who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence.',
         genre: {
@@ -68,7 +76,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '2',
         title: 'Lord of the Rings',
         description: 'A fellowship of hobbits, elves, dwarfs, and men is formed to destroy the ring by casting it into the volcanic fires of the Crack of Doom, where it was forged. They are opposed on their harrowing mission by the evil Sauron and his Black Riders.',
         genre: {
@@ -87,7 +95,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '2',
         title: 'Coco',
         description: `The story follows a 12-year-old boy named Miguel who is accidentally transported to the Land of the Dead, where he seeks the help of his deceased musician great-great-grandfather to return him to his family among the living and to reverse his family's ban on music.`,
         genre: {
@@ -106,7 +114,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '4',
         title: 'Braveheart',
         description: `Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England. William Wallace is a Scottish rebel who leads an uprising against the cruel English ruler Edward the Longshanks, who wishes to inherit the crown of Scotland for himself.`,
         genre: {
@@ -125,7 +133,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '5',
         title: 'Midway',
         description: 'The film, based on the real-life events of this heroic feat, tells the story of the leaders and soldiers who used their instincts, fortitude and bravery to overcome the odds. In May 1942 the Imperial Japanese Navy launches an attack on the island of Midway in the Pacific Ocean.',
         genre: {
@@ -144,7 +152,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '6',
         title: 'Hangover',
         description: 'The story was about three friends who lose the groom at his Las Vegas bachelor party and then must retrace their steps to figure out what happened. It was then rewritten by Jeremy Garelick and director Todd Phillips, who added additional elements such as Mike Tyson and his tiger, the baby, and the police cruiser.',
         genre: {
@@ -163,7 +171,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '7',
         title: 'Batman The Dark knight',
         description: 'Set within a year after the events of Batman Begins (2005), Batman, Lieutenant James Gordon, and new District Attorney Harvey Dent successfully begin to round up the criminals that plague Gotham City, until a mysterious and sadistic criminal mastermind known only as "The Joker" appears in Gotham, creating a new wave of chaos.',
         genre: {
@@ -182,7 +190,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '8',
         title: 'The Silence of the Lambs',
         description: 'Young F.B.I. trainee Clarice Starling (Jodie Foster) is assigned to help find a missing woman to save her from a psychopathic serial killer (Ted Levine) who skins his victims. Clarice attempts to gain a better insight into the twisted mind of the killer by talking to another psychopath: Dr.',
         genre: {
@@ -201,7 +209,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '9',
         title: 'The Hobbit',
         description: `The Hobbit is set within Tolkien's fictional universe and follows the quest of home-loving Bilbo Baggins, the titular hobbit, to win a share of the treasure guarded by a dragon named Smaug. Bilbo's journey takes him from his light-hearted, rural surroundings into more sinister territory.`,
         genre: {
@@ -220,7 +228,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '',
+        id: '10',
         title: 'Forrest Gump',
         description: `Forrest Gump, an innocent and kind-hearted Alabama boy, has been dealing with other people's unkindness nearly all his life. Having grown up with beautiful Jenny, his only friend, Forrest yearns to learn all about the ways of the world and embarks on a mission to find his true purpose in life.`,
         genre: {
