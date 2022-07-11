@@ -42,7 +42,7 @@ let users = [
         username: 'elver_75',
         password: 'iamthebest7788',
         email: 'elver_75@gamil.com',
-        birthday: '20-07.1975',
+        birthday: '20-07-1975',
         favoriteMovies: [],
     },
     {
