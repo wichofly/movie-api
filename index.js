@@ -69,7 +69,7 @@ let movies = [
             id: '',
             name: 'Frank Darabont',
             bio: 'Frank Darabont is a Hungarian-American director, producer, and screenwriter. He is best known for his film adaptations of Stephen King stories, including The Shawshank Redemption, The Green Mile, and The Mist. He also works as a producer, producing such television shows as The Walking Dead and Mob City.',
-            birthyear: 'January 28, 1959 in Montbéliard, Doubs, France',
+            birthyear: 'January 28, 1959',
             deathyear: ''
         },
         imageURL: '',
@@ -95,7 +95,7 @@ let movies = [
         featured: '',
     },
     {
-        id: '2',
+        id: '3',
         title: 'Coco',
         description: `The story follows a 12-year-old boy named Miguel who is accidentally transported to the Land of the Dead, where he seeks the help of his deceased musician great-great-grandfather to return him to his family among the living and to reverse his family's ban on music.`,
         genre: {
