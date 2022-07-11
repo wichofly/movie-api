@@ -30,145 +30,215 @@ let users = [
     {
         id: 1,
         name: 'Antonio',
-        favoriteMovies: ['Cars']
+        username: '',
+        password: '',
+        email: '',
+        birthday: '',
+        favoriteMovies: ['Cars'],
+
+
     },
     {
         id: 2,
         name: 'Maria',
-        favoriteMovies: []
+        username: '',
+        password: '',
+        email: '',
+        birthday: '',
+        favoriteMovies: [],
     },
 ]
 
 let movies = [
     {
+        id: '',
         title: 'The Shawshank Redemption',
         description: 'It tells the story of banker, who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence.',
         genre: {
+            id: '',
             name: 'Drama',
             description: 'In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone.',
         },
         director: {
+            id: '',
             name: 'Frank Darabont',
             bio: 'Frank Darabont is a Hungarian-American director, producer, and screenwriter. He is best known for his film adaptations of Stephen King stories, including The Shawshank Redemption, The Green Mile, and The Mist. He also works as a producer, producing such television shows as The Walking Dead and Mob City.',
-            birth: 'January 28, 1959 in Montbéliard, Doubs, France'
-        }
+            birth: 'January 28, 1959 in Montbéliard, Doubs, France',
+            death: ''
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Lord of the Rings',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'J.R.R. Tolkien',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Coco',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Lee Unkrich',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Braveheart',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Randall Wallace',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Midway',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Craig L. Symonds',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Red Tails',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'John Ridley',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Batman The Dark knight',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Christopher Nolan',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Matrix',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Lana Wachowski',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'John Wick',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Derek Kolstad',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
     {
+        id: '',
         title: 'Forrest Gump',
         description: '',
         genre: {
+            id: '',
             name: '',
             description: '',
         },
         director: {
+            id: '',
             name: 'Winston Groom',
             bio: '',
-            birth: ''
-        }
+            birth: '',
+            death: '',
+        },
+        image: '',
+        featured: '',
     },
 ];
 
