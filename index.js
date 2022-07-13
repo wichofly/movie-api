@@ -34,8 +34,6 @@ let users = [
         email: 'juliamaria@gmail.com',
         birthday: '18-04-1988',
         favoriteMovies: ['Lord of the Rings'],
-
-
     },
     {
         id: 2,
@@ -267,7 +265,7 @@ app.get('/documentation', (req, res) => {
         next(error)
     }*/
     res.sendFile('public/documentation.html', { root: __dirname });
-});
+}); 
 
 // CREATE
 app.post('/users', (req, res) => {
