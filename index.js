@@ -32,7 +32,7 @@ let users = [
         username: 'juliamaria123',
         password: 'juliaamarillo0022',
         email: 'juliamaria@gmail.com',
-        birthday: '18-04-1988',
+        birthday: '1988-04-18',
         favoriteMovies: ['Lord of the Rings'],
     },
     {
@@ -40,7 +40,7 @@ let users = [
         username: 'elver_75',
         password: 'iamthebest7788',
         email: 'elver_75@gmail.com',
-        birthday: '20-07-1975',
+        birthday: '1975-07-20',
         favoriteMovies: [],
     },
     {
@@ -48,7 +48,23 @@ let users = [
         username: 'davidpower',
         password: 'sanjuandeargentina0987',
         email: 'david_elgrande@gmail.com',
-        birthday: '02-06.1996',
+        birthday: '1996-06-02',
+        favoriteMovies: [],
+    },
+    {
+        id: 4,
+        username: 'joe_80',
+        password: 'joedb123',
+        email: 'joe80@gmail.com',
+        birthday: '1993-07-16',
+        favoriteMovies: [],
+    },
+    {
+        id: 5,
+        username: 'maria-julia',
+        password: 'mariajulia123',
+        email: 'maria_julia@gmail.com',
+        birthday: '1988-11-01',
         favoriteMovies: [],
     },
 ]
@@ -70,7 +86,7 @@ let movies = [
             birthyear: 'January 28, 1959',
             deathyear: ''
         },
-        imageURL: '',
+        imageURL: 'shawshank.png',
         featured: '',
     },
     {
@@ -89,8 +105,8 @@ let movies = [
             birthyear: 'October 31,  1961',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'lord_rings.png',
+        featured: true,
     },
     {
         id: '3',
@@ -108,8 +124,8 @@ let movies = [
             birthyear: 'August 8, 1967',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'coco.png',
+        featured: true,
     },
     {
         id: '4',
@@ -127,8 +143,8 @@ let movies = [
             birthyear: 'January 3, 1956',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'brave.png',
+        featured: true,
     },
     {
         id: '5',
@@ -146,8 +162,8 @@ let movies = [
             birthyear: 'November 10, 1955',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'midway.png',
+        featured: true,
     },
     {
         id: '6',
@@ -165,8 +181,8 @@ let movies = [
             birthyear: 'December 20, 1970',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'hangover.png',
+        featured: true,
     },
     {
         id: '7',
@@ -184,8 +200,8 @@ let movies = [
             birthyear: 'July 30, 1970',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'dark_night.png',
+        featured: true,
     },
     {
         id: '8',
@@ -203,8 +219,8 @@ let movies = [
             birthyear: 'February 22, 1944',
             deathyear: 'April 26, 2017',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'silece_lambs.png',
+        featured: true,
     },
     {
         id: '9',
@@ -222,8 +238,8 @@ let movies = [
             birthyear: 'October 31,  1961',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'hobbit.png',
+        featured: true,
     },
     {
         id: '10',
@@ -241,8 +257,8 @@ let movies = [
             birthyear: 'May 14, 1952',
             deathyear: '',
         },
-        imageURL: '',
-        featured: '',
+        imageURL: 'gump.png',
+        featured: true,
     },
 ];
 
