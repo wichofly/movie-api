@@ -7,7 +7,6 @@ const Movies = Models.Movie; // Refers to the model names created in "model.js"
 const Users = Models.Users;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }) // Allows mongoose to connect to myFlixDB database
-
 /*---------------------------------------------------------------------------------*/
 
 const express = require('express'),
@@ -26,16 +25,15 @@ const app = express();
 // a ‘log.txt’ file is created in root directory
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
-
 app.use(morgan('combined')); // setup the logger, Mildware function to the terminal
 
-app.use(express.static('public')); // Automatically routes all requests for static files to their corresponding files within a certain folder on the server
+app.use(express.static('public')); // Automatically routes all requests for static files to their corresponding files within a certain folder on the server.
 
+app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ //support parsing of application/x-www-form-urlencoded post data
     extended: true
 }));
 
-app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(methodOverride());
 
 let users = [
