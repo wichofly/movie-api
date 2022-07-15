@@ -410,7 +410,7 @@ app.get('/movies/:title', (req, res) => {
 })
 */
 
-// READ Getting movies by title using Mongoose
+// READ Getting movie by title using Mongoose
 app.get('/movies/:title', (req, res) => {
     Movies.findOne({ title: req.params.title })
         .then((movie) => {
@@ -423,6 +423,7 @@ app.get('/movies/:title', (req, res) => {
 });
 
 // READ
+/* 
 app.get('/movies/genre/:genreName', (req, res) => {
     const { genreName } = req.params;
     const genre = movies.find(movie => movie.genre.name === genreName).genre;
@@ -433,8 +434,22 @@ app.get('/movies/genre/:genreName', (req, res) => {
         res.status(400).send('no such genre')
     }
 })
+*/
+
+// READ Getting movie by genre in Mongoose
+app.get('/movies/genre/:name', (req, res) => {
+    Movies.find({ 'genre.name': req.params.name })
+        .then((genre) => {
+            res.json(genre);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+})
 
 // READ
+/*
 app.get('/movies/directors/:directorName', (req, res) => {
     const { directorName } = req.params;
     const director = movies.find(movie => movie.director.name === directorName).director;
@@ -445,6 +460,21 @@ app.get('/movies/directors/:directorName', (req, res) => {
         res.status(400).send('no such director')
     }
 })
+*/
+
+// READ Getting Director in Mongoose
+app.get('/movies/director/:name', (req, res) => {
+    Movies.findOne({ 'director.name': req.params.name })
+        .then((director) => {
+            res.json(director);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+})
+
+
 
 // READ in Mongoose
 app.get('/users', (req, res) => {
