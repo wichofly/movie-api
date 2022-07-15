@@ -5,6 +5,9 @@ const Models = require('./models.js');
 
 const Movies = Models.Movie; // Refers to the model names created in "model.js"
 const Users = Models.Users;
+
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }) // Allows mongoose to connect to myFlixDB database
+
 /*---------------------------------------------------------------------------------*/
 
 const express = require('express'),
