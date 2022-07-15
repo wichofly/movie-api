@@ -377,9 +377,23 @@ app.post('/users/:username/movies/:movieId', (req, res) => {
 });
 
 // READ
+/* 
 app.get('/movies', (req, res) => {
     res.status(200).json(movies);
     //res.json(movies)
+});
+*/
+
+// READ get all movies using Mongoose
+app.get('/movies',(req, res) => {
+    Movies.find()
+    .then((movies) => {
+        res.status(201).json(movies);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+    })
 });
 
 // READ
