@@ -385,18 +385,19 @@ app.get('/movies', (req, res) => {
 */
 
 // READ get all movies using Mongoose
-app.get('/movies',(req, res) => {
+app.get('/movies', (req, res) => {
     Movies.find()
-    .then((movies) => {
-        res.status(201).json(movies);
-    })
-    .catch((err) => {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-    })
+        .then((movies) => {
+            res.status(201).json(movies);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        })
 });
 
 // READ
+/* 
 app.get('/movies/:title', (req, res) => {
     const { title } = req.params;
     const movie = movies.find(movie => movie.title === title);
@@ -407,6 +408,19 @@ app.get('/movies/:title', (req, res) => {
         res.status(400).send('no such movie')
     }
 })
+*/
+
+// READ Getting movies by title using Mongoose
+app.get('/movies/:title', (req, res) => {
+    Movies.findOne({ title: req.params.title })
+        .then((movie) => {
+            res.json(movie)
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
 
 // READ
 app.get('/movies/genre/:genreName', (req, res) => {
