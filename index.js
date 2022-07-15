@@ -1,3 +1,12 @@
+/* Integrating Mongoose to perform CRUD operations on MongoDB data.
+-----------------------------------------------------------------------------------*/
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie; // Refers to the model names created in "model.js"
+const Users = Models.Users;
+/*---------------------------------------------------------------------------------*/
+
 const express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'), // import built in node modules fs and path

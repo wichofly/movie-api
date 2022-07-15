@@ -29,9 +29,10 @@ let userSchema = mongoose.Schema({
     favoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }]
 })
 
-// Making a model with the above schema, Mongoose is gonna create a collection with the name Movies in plural although that is written in singular.
+// Making a model with the above schemas, Mongoose is gonna create collections with the names "movies" and "users" in plural although that is written in singular and the first letter is uppercase.
 let Movie = mongoose.model('Movie', movieSchema);
-let User = mongoose.model('user', userSchema);
+let User = mongoose.model('User', userSchema);
 
+// This will let you then import these models into your “index.js” file 
 module.exports.Movie = Movie;
 module.exports.User = User;
