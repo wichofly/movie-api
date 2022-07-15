@@ -67,10 +67,22 @@
                 <tr>
                     <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been
                         added)</td>
-                    <td>/users/:id/:movieTitle</td>
+                    <td>/users/:username/movies/:movieId</td>
                     <td>POST</td>
                     <td>None</td>
-                    <td>A text message indicates weather the favorite movie has been successfully added to user's list
+                    <td>A JSON object holding data on the user to whom the favorite movie was added <br>
+                        <code class="text-primary">
+                        {
+                            "_id": "62cf1de80d81998b05c5217c", <br>
+                            "username": "elver_75",<br>
+                            "password": "iamthebest7788",<br>
+                            "email": "elver_75@gmail.com",<br>
+                            "birthday": "1975-07-20T00:00:00.000Z",<br>
+                            "favoriteMovies": [
+                            "62ceface9f2c81f25a696f6b"
+                            ] <br>
+                        }
+                         </code>
                     </td>
                 </tr>
                 <tr>
