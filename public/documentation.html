@@ -122,64 +122,83 @@
                 </tr>
                 <tr>
                     <td>Return data about a single movie by genre to the user</td>
-                    <td>/movies/genre/:genreName</td>
+                    <td>/movies/genre/:name</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data about a single movie <br>
                         <code class="text-primary">
                             {
-                            "name": "Drama", <br>
-                            "description": "In film and television, drama is a category or genre of narrative fiction
-                            (or semi-fiction) intended to be more serious than humorous in tone." <br>
+                                "name": "Drama", <br>
+                                "description": "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
                             }
                         </code>
                     </td>
                 </tr>
                 <tr>
                     <td>Return data about a single movie by director to the user</td>
-                    <td>/movies/directors/:directorName</td>
+                    <td>/movies/director/:name</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data about a single movie <br>
                         <code class="text-primary">
                             {
-                            "name": "Frank Darabont", <br>
-                            "bio": "Frank Darabont is a Hungarian-American director, producer, and screenwriter. He is
-                            best known for his film adaptations of Stephen King stories, including The Shawshank
-                            Redemption, The Green Mile, and The Mist. He also works as a producer, producing such
-                            television shows as The Walking Dead and Mob City.", <br>
-                            "birth": "January 28, 1959 in Montbéliard, Doubs, France"
+                                "name": "Jonathan Demme", <br>
+                                "bio": "Demme was the son of Dorothy Louise (née Rogers) and Robert Eugene Demme, a public relations executive. He was raised in Rockville Centre, New York and Miami, where he graduated from Southwest Miami High School before attending the University of Florida.", <br>
+                                "birthyear": "1944-02-21T23:00:00.000Z", <br>
+                                "deathyear": "2017-04-25T22:00:00.000Z" 
                             }
                         </code>
                     </td>
                 </tr>
                 <tr>
-                    <td>Return a list of ALL users</td>
+                    <td>Return a list of All users</td>
                     <td>/users</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data about all the users</td>
                 </tr>
                 <tr>
+                    <td>Return an user by username</td>
+                    <td>/users/:username</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about an user by username <br>
+                        <code class="text-primary">
+                            {
+                                "_id": "62cf1e5d0d81998b05c5217d", <br>
+                                "username": "davidpower", <br>
+                                "password": "sanjuandeargentina0987", <br>
+                                "email": "david_elgrande@gmail.com", <br>
+                                "birthday": "1996-06-02T00:00:00.000Z", <br>
+                                "favoriteMovies": []
+                            }
+                        </code>
+
+                    </td>
+                </tr>
+                <tr>
                     <td>Allow users to update their user info (username)</td>
-                    <td>/users/:id</td>
+                    <td>/users/:username</td>
                     <td>PUT</td>
                     <td>A JSON object holding data about the user to update, structured like: <br>
                         <code class="text-primary">
                             {
-                            "name": "Antony Updated Name", <br>
-                            "favoriteMovies": []
+                                "username": "juliamaria123", <br>
+                                "password": "juliaamarillo0022UPDATE", <br>
+                                "email": "juliamaria@gmail.com", <br>
+                                "birthday": "1988-04-18"
                             }
                         </code>
                     </td>
                     <td>A JSON object holding data about teh user update <br>
                         <code class="text-primary">
                             {
-                            "id": 1, <br>
-                            "name": "Antony Updated Name", <br>
-                            "favoriteMovies": [
-                            "Cars"
-                            ]
+                                "_id": "62cee73300c3c35365cb6ccc", <br>
+                                "username": "juliamaria123", <br>
+                                "password": "juliaamarillo0022UPDATE", <br>
+                                "email": "juliamaria@gmail.com", <br>
+                                "birthday": "1988-04-18T00:00:00.000Z", <br>
+                                "favoriteMovies": []
                             }
                         </code>
                     </td>
@@ -187,18 +206,30 @@
                 <tr>
                     <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has
                         been removed)</td>
-                    <td>/users/:id/:movieTitle</td>
+                    <td>/users/:uername/movies/movieId</td>
                     <td>DELETE</td>
                     <td>None</td>
-                    <td>A text message including weather the favorite movie has been successfully deleted to user's list
+                    <td>A JSON object holding data about the user<br>
+                        <code class="text-primary">
+                            {
+                                "_id": "62cee73300c3c35365cb6ccc",
+                                "username": "juliamaria123",
+                                "password": "juliaamarillo0022UPDATE",
+                                "email": "juliamaria@gmail.com",
+                                "birthday": "1988-04-18T00:00:00.000Z",
+                                "favoriteMovies": [
+                                    "62cefc659f2c81f25a696f70"
+                                ]
+                            }
+                        </code>
                     </td>
                 </tr>
                 <tr>
                     <td>Allow existing users to deregister (showing only a text that a user email has been removed)</td>
-                    <td>/users/:id</td>
+                    <td>/users/:username</td>
                     <td>DELETE</td>
                     <td>None</td>
-                    <td>A text message indicates weather the existing user has been successfully deleted</td>
+                    <td>A text message indicates weather the existing user has been successfully delete</td>
                 </tr>
             </tbody>
         </table>
