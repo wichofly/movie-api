@@ -22,11 +22,11 @@ let movieSchema = mongoose.Schema({
 });
 
 let userSchema = mongoose.Schema({
-    username: {type: String, required: true},
-    password: {type: String, required: true},
-    email: {type: String, required: true},
+    username: { type: String, required: true },
+    password: { type: String, required: true },
+    email: { type: String, required: true },
     birthday: Date,
-    favoriteMovies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Movie'}] 
+    favoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }]
 })
 
 // Making a model with the above schema, Mongoose is gonna create a collection with the name Movies in plural although that is written in singular.
