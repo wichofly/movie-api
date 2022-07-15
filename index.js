@@ -1,10 +1,10 @@
 /* Integrating Mongoose to perform CRUD operations on MongoDB data.
 -----------------------------------------------------------------------------------*/
 const mongoose = require('mongoose');
-const Models = require('./models.js');
+const Models = require('./model.js');
 
 const Movies = Models.Movie; // Refers to the model names created in "model.js"
-const Users = Models.Users;
+const Users = Models.User;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }) // Allows mongoose to connect to myFlixDB database
 /*---------------------------------------------------------------------------------*/
@@ -314,6 +314,7 @@ app.get('/documentation', (req, res) => {
 });
 
 // CREATE
+/* 
 app.post('/users', (req, res) => {
     const newUser = req.body // is posible just for this code: "app.use(bodyParser.json())". is what enables us to read data from the body object
 
@@ -325,8 +326,36 @@ app.post('/users', (req, res) => {
         res.status(400).send('users need names')
     }
 })
+*/
+// Now using Mongoose
+app.post('/users', (req, res) => {
+    Users.findOne({ username: req.body.username })
+        .then((user) => {
+            if (user) {
+                return res.status(400).send(req.body.username + 'already exists');
+            } else {
+                Users
+                    .create({
+                        username: req.body.username,
+                        password: req.body.password,
+                        email: req.body.email,
+                        birthday: req.body.birthday
+                    })
+                    .then((user) => { res.status(201).json(user) })
+                    .catch((error) => {
+                        console.error(error);
+                        res.status(500).send('Error: ' + error);
+                    })
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+        });
+});
 
 // CREATE
+/* 
 app.post('/users/:id/:movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
 
@@ -339,6 +368,23 @@ app.post('/users/:id/:movieTitle', (req, res) => {
         res.status(400).send('no such user')
     }
 })
+*/
+
+// CREATE. Add a movie to users list of favorite, using Mongoose
+app.post('/users/:username/movies/:movieId', (req, res) => {
+    Users.findOneAndUpdate({ username: req.params.username }, {
+        $push: { favoriteMovies: req.params.movieId }
+    },
+        { new: true }, // This line makes sure that the updated document is returned
+        (err, updatedUser) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            } else {
+                res.json(updatedUser);
+            }
+        });
+});
 
 // READ
 app.get('/movies', (req, res) => {
@@ -382,7 +428,32 @@ app.get('/movies/directors/:directorName', (req, res) => {
     }
 })
 
+// READ in Mongoose
+app.get('/users', (req, res) => {
+    Users.find()
+        .then((users) => {
+            res.status(201).json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
+// READ getting a user by name in Mongoose
+app.get('/users/:username', (req, res) => {
+    Users.findOne({ username: req.params.username })
+        .then((user) => {
+            res.json(user);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
 // UPDATE
+/* 
 app.put('/users/:id', (req, res) => {
     const { id } = req.params;
     const updateUser = req.body; // is posible just for this code: "app.use(bodyParser.json())". is what enables us to read data from the body object
@@ -396,6 +467,29 @@ app.put('/users/:id', (req, res) => {
         res.status(400).send('no such user')
     }
 })
+*/
+
+// UPDATE a user's info, by username in Mongoose
+app.put('/users/:username', (req, res) => {
+    Users.findOneAndUpdate({ username: req.params.username }, {
+        $set:
+        {
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email,
+            birthday: req.body.birthday
+        }
+    },
+        { new: true }, // This line makes sure that the updated document is returned
+        (err, updatedUser) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            } else {
+                res.json(updatedUser);
+            }
+        });
+});
 
 // DELETE
 app.delete('/users/:id/:movieTitle', (req, res) => {
@@ -412,6 +506,7 @@ app.delete('/users/:id/:movieTitle', (req, res) => {
 })
 
 // DELETE
+/* 
 app.delete('/users/:id', (req, res) => {
     const { id } = req.params;
 
@@ -424,6 +519,23 @@ app.delete('/users/:id', (req, res) => {
         res.status(400).send('no such user')
     }
 })
+*/
+
+// DELETE in Mongoose
+app.delete('/users/:username', (req, res) => {
+    Users.findOneAndRemove({ username: req.params.username })
+        .then((user) => {
+            if (!user) {
+                res.status(400).send(req.params.username + ' was not found');
+            } else {
+                res.status(200).send(req.params.username + ' was deleted.');
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
 
 app.get('/secreturl', (req, res) => {
     res.send('This is a secret url with super top-secret content.');
@@ -433,10 +545,12 @@ app.get('*', (req, res) => {
     res.send(`I don't know that path!`)
 })
 
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke! Sorry...')
 })
+
 
 app.listen(8080, () => {
     console.log('Your app is listening on port 8080.');
