@@ -100,7 +100,7 @@ let movies = [
         year: 1994,
         score: 9.3,
         rating: 'R',
-        imageURL: 'shawshank.png',
+        imageURL: 'https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600/?ref_=tt_ov_i',
         featured: true
     },
     {
@@ -120,7 +120,7 @@ let movies = [
         year: 2001,
         score: 8.8,
         rating: 'PG-13',
-        imageURL: 'lord_rings.png',
+        imageURL: 'https://www.imdb.com/title/tt0120737/mediaviewer/rm3592958976/?ref_=tt_ov_i',
         featured: true
     },
     {
@@ -140,7 +140,7 @@ let movies = [
         year: 2017,
         score: 8.4,
         rating: 'PG',
-        imageURL: 'coco.png',
+        imageURL: 'https://www.imdb.com/title/tt2380307/mediaviewer/rm585455872/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -160,7 +160,7 @@ let movies = [
         year: 1995,
         score: 8.4,
         rating: 'R',
-        imageURL: 'brave.png',
+        imageURL: 'https://www.imdb.com/title/tt0112573/mediaviewer/rm3170786816/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -180,7 +180,7 @@ let movies = [
         year: 2019,
         score: 6.7,
         rating: 'PG-13',
-        imageURL: 'midway.png',
+        imageURL: 'https://www.imdb.com/title/tt6924650/mediaviewer/rm3946167041/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -200,7 +200,7 @@ let movies = [
         year: 2009,
         score: 7.7,
         rating: 'R',
-        imageURL: 'hangover.png',
+        imageURL: 'https://www.imdb.com/title/tt1119646/mediaviewer/rm401570304/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -220,7 +220,7 @@ let movies = [
         year: 2008,
         score: 9.0,
         rating: 'PG-13',
-        imageURL: 'dark_night.png',
+        imageURL: 'https://www.imdb.com/title/tt1345836/mediaviewer/rm834516224/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -240,7 +240,7 @@ let movies = [
         year: 1991,
         score: 8.6,
         rating: 'R',
-        imageURL: 'silece_lambs.png',
+        imageURL: 'https://www.imdb.com/title/tt0102926/mediaviewer/rm3242988544/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -260,7 +260,7 @@ let movies = [
         year: 2012,
         score: 7.8,
         rating: 'PG-13',
-        imageURL: 'hobbit.png',
+        imageURL: 'https://www.imdb.com/title/tt0903624/mediaviewer/rm3577719808/?ref_=tt_ov_i',
         featured: true,
     },
     {
@@ -280,7 +280,7 @@ let movies = [
         year: 1994,
         score: 8.8,
         rating: 'PG-13',
-        imageURL: 'gump.png',
+        imageURL: 'https://www.imdb.com/title/tt0109830/mediaviewer/rm1954748672/?ref_=tt_ov_i',
         featured: true,
     },
 ];
