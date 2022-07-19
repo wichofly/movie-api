@@ -32,10 +32,10 @@ app.use(express.static('public')); // Automatically routes all requests for stat
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
-let auth = require('./auth.js')(app); // note the app argument you're passing here. This ensures that Express is available in your “auth.js” file as well.
+let auth = require('./auth')(app); // note the app argument you're passing here. This ensures that Express is available in your “auth.js” file as well.
 
-const passport = require ('passport');
-require('./passport.js');
+const passport = require('passport');
+require('./passport');
 
 app.use(methodOverride());
 
@@ -388,7 +388,7 @@ app.get('/movies', (req, res) => {
 */
 
 // READ get all movies using Mongoose
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
