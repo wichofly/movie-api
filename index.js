@@ -300,7 +300,7 @@ let usersMovies = [
 ];
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my app!');
+    res.send('Welcome to my movie API!');
 });
 
 app.get('/documentation', (req, res) => {
@@ -331,7 +331,8 @@ app.post('/users', [
     check('username', 'Username is required').isLength({ min: 5 }),
     check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('password', 'Password is required').not().isEmpty(),
-    check('email', 'Email does not appear to be valid').isEmail()
+    check('email', 'Email does not appear to be valid').isEmail(),
+    check('birthday', 'Birthday does not appear to be valid').isDate()
 ], (req, res) => {
     let errors = validationResult(req);
 
@@ -537,12 +538,25 @@ app.put('/users/:id', (req, res) => {
 */
 
 // UPDATE a user's info, by username in Mongoose
-app.put('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put('/users/:username', [
+    check('username', 'Username is required').isLength({ min: 5 }),
+    check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('password', 'Password is required').not().isEmpty(),
+    check('email', 'Email does not appear to be valid').isEmail(),
+    check('birthday', 'Birthday does not appear to be valid').isDate()
+], passport.authenticate('jwt', { session: false }), (req, res) => {
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+
+    let hashedPassword = Users.hashPassword(req.body.password);
     Users.findOneAndUpdate({ username: req.params.username }, {
         $set:
         {
             username: req.body.username,
-            password: req.body.password,
+            password: hashedPassword,
             email: req.body.email,
             birthday: req.body.birthday
         }
@@ -633,6 +647,6 @@ app.use((err, req, res, next) => {
 })
 
 const port = process.env.PORT || 8080;
-app.listen(port, '0.0.0.0',() => {
- console.log('Listening on Port ' + port);
+app.listen(port, '0.0.0.0', () => {
+    console.log('Listening on Port ' + port);
 });
