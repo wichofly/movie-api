@@ -21,6 +21,8 @@ const { send, title } = require('process');
 
 const cors = require('cors');
 
+const { check, validationResult } = require('express-validator');
+
 const app = express();
 
 // create a write stream (in append mode)
@@ -140,7 +142,7 @@ let movies = [
             birthyear: 'August 8, 1967',
             deathyear: '',
         },
-        actors: ['Anthony Gonzalez', 'Gael Garcia Bernal', 'Benjamin Bratt', ],
+        actors: ['Anthony Gonzalez', 'Gael Garcia Bernal', 'Benjamin Bratt',],
         year: 2017,
         score: 8.4,
         rating: 'PG',
@@ -325,7 +327,18 @@ app.post('/users', (req, res) => {
 })
 */
 // Now using Mongoose
-app.post('/users', (req, res) => {
+app.post('/users', [
+    check('username', 'Username is required').isLength({ min: 5 }),
+    check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('password', 'Password is required').not().isEmpty(),
+    check('email', 'Email does not appear to be valid').isEmail()
+], (req, res) => {
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+
     let hashedPassword = Users.hashPassword(req.body.password);
     Users.findOne({ username: req.body.username })
         .then((user) => {
