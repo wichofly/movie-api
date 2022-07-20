@@ -29,7 +29,17 @@ let userSchema = mongoose.Schema({
     email: { type: String, required: true },
     birthday: Date,
     favoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }]
-})
+});
+
+userSchema.statics.hashPassword = (password) => {   // hashPassword function, which is what does the actual hashing of submitted passwords. 
+    return bcrypt.hashSync(password, 10);          
+  };
+
+  
+userSchema.methods.validatePassword = function(password) { // validatePassword, is what compares submitted hashed passwords with the hashed passwords stored in your database.
+    return bcrypt.compareSync(password, this.Password);      // Don't use arrow functions when defining instance methods //
+  };
+
 
 // Making a model with the above schemas, Mongoose is gonna create collections with the names "movies" and "users" in plural although that is written in singular and the first letter is uppercase.
 let Movie = mongoose.model('Movie', movieSchema);
