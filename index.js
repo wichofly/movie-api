@@ -21,6 +21,8 @@ const { send, title } = require('process');
 
 const app = express();
 
+const cors = require('cors');
+
 // create a write stream (in append mode)
 // a ‘log.txt’ file is created in root directory
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
@@ -31,6 +33,8 @@ app.use(express.static('public')); // Automatically routes all requests for stat
 
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
+
+app.use(cors());
 
 let auth = require('./auth')(app); // note the app argument you're passing here. This ensures that Express is available in your “auth.js” file as well.
 
