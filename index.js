@@ -19,9 +19,9 @@ const bodyParser = require('body-parser'),
     methodOverride = require('method-override');
 const { send, title } = require('process');
 
-const app = express();
-
 const cors = require('cors');
+
+const app = express();
 
 // create a write stream (in append mode)
 // a ‘log.txt’ file is created in root directory
