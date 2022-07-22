@@ -1,0 +1,11 @@
+{"_id":{"$oid":"62cee73300c3c35365cb6ccc"},"username":"juliamaria123","password":"juliaamarillo0022UPDATE","email":"juliamaria@gmail.com","birthday":{"$date":"1988-04-18T00:00:00Z"},"favoriteMovies":[{"$oid":"62cefc659f2c81f25a696f70"}]}
+{"_id":{"$oid":"62cf1de80d81998b05c5217c"},"username":"elver_75","password":"iamthebest7788","email":"elver_75@gmail.com","birthday":"1975-07-20","favoriteMovies":[{"$oid":"62ceface9f2c81f25a696f6b"},{"$oid":"62ceface9f2c81f25a696f6b"}]}
+{"_id":{"$oid":"62cf1e5d0d81998b05c5217d"},"username":"davidpower","password":"sanjuandeargentina0987","email":"david_elgrande@gmail.com","birthday":"1996-06-02","favoriteMovies":[]}
+{"_id":{"$oid":"62cf21900d81998b05c52182"},"username":"maria-julia","password":"mariajulia123","email":"maria_julia@gmail.com","birthday":"1988-11-01","favoriteMovies":[{"$oid":"62cefb519f2c81f25a696f6d"}]}
+{"_id":{"$oid":"62d67e4daae3a00e8075a25b"},"username":"pepita","password":"soyunagataguapaUpdate","email":"pepita@gmail.com","birthday":{"$date":"2009-06-02T00:00:00Z"},"favoriteMovies":[],"__v":0}
+
+
+
+
+
+
