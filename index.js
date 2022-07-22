@@ -8,7 +8,7 @@ const Users = Models.User;
 
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }) // Allows mongoose to connect to myFlixDB database
 
-mongoose.connect('mongodb+srv://wichofly:8ZGpKHx75zB1l5TA@cluster0.mgsle.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
 /*---------------------------------------------------------------------------------*/
 
 const express = require('express'),
