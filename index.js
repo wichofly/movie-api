@@ -8,7 +8,7 @@ const Users = Models.User;
 
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }) // Allows mongoose to connect to myFlixDB database
 
-mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true }); // Now, your connection URI will never be exposed in your “index.js” file. This is much more secure!
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true }); // Now, your connection URI will never be exposed in your “index.js” file. This is much more secure!
 /*---------------------------------------------------------------------------------*/
 
 const express = require('express'),
