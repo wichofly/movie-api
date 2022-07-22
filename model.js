@@ -37,7 +37,7 @@ userSchema.statics.hashPassword = (password) => {   // hashPassword function, wh
 
   
 userSchema.methods.validatePassword = function(password) { // validatePassword, is what compares submitted hashed passwords with the hashed passwords stored in your database.
-    return bcrypt.compareSync(password, this.Password);      // Don't use arrow functions when defining instance methods //
+    return bcrypt.compareSync(password, this.password);      // Don't use arrow functions when defining instance methods //
   };
 
 
