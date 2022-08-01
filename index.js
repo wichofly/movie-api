@@ -409,15 +409,17 @@ app.get('/movies', (req, res) => {
 */
 
 // READ get all movies using Mongoose
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', function (req, res) { //passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
-        .then((movies) => {
+        .then(function (movies) {
+        //.then((movies) => {
             res.status(201).json(movies);
         })
-        .catch((err) => {
+        .catch(function(error) {
+        //.catch((err) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
-        })
+        });
 });
 
 // READ
