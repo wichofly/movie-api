@@ -21,6 +21,7 @@ const bodyParser = require('body-parser'),
     methodOverride = require('method-override');
 const { send, title } = require('process');
 
+// CORS - Place before route middleware - Restrict access to API
 const cors = require('cors');
 
 const { check, validationResult } = require('express-validator');
@@ -38,8 +39,10 @@ app.use(express.static('public')); // Automatically routes all requests for stat
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
+     // Allow certain origins to have access, replace app.use(cors()) and use:
 let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
+// Allows requests from all origins
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
