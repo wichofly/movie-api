@@ -38,7 +38,7 @@ app.use(express.static('public')); // Automatically routes all requests for stat
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
-let allowedOrigins = ['http://localhost:1234', 'http://testsite.com'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
 app.use(cors({
     origin: (origin, callback) => {
