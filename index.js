@@ -39,20 +39,22 @@ app.use(express.static('public')); // Automatically routes all requests for stat
 app.use(bodyParser.json()); // support parsing of application/json type post data
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
-     // Allow certain origins to have access, replace app.use(cors()) and use:
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
-
 // Allows requests from all origins
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
-            let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
-            return callback(new Error(message), false);
-        }
-        return callback(null, true);
-    }
-}));
+app.use(cors());
+
+//      // Allow certain origins to have access, replace app.use(cors()) and use:
+// let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
+
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         if (!origin) return callback(null, true);
+//         if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
+//             let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
+//             return callback(new Error(message), false);
+//         }
+//         return callback(null, true);
+//     }
+// }));
 
 let auth = require('./auth')(app); // note the app argument you're passing here. This ensures that Express is available in your “auth.js” file as well.
 
