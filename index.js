@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //support parsing of applica
 //app.use(cors());
 
      // Allow certain origins to have access, replace app.use(cors()) and use:
-let allowedOrigins = ['http://localhost:1234', 'http://localhost:8080'];
+let allowedOrigins = ['http://localhost:1234', 'http://localhost:8080', 'https://wichoflix-client-react.netlify.app'];
 
 app.use(cors({
     origin: (origin, callback) => {
