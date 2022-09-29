@@ -2,46 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Documentation</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Documentation</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>My Flix</h1>
-        <h3>Objective</h3>
-        <p>
-            To build the server-side component of a “movies” web application.
-        </p>
-        <h3>Intro</h3>
-        <p> The web application will provide users with access to information about different
-            movies, directors, and genres. Users will be able to sign up, update their
-            personal information, and create a list of their favorite movies.
-        </p>
-    </div>
+  <div class="container">
+    <h1>My Flix</h1>
+    <h3>Objective</h3>
+    <p>
+      To build the server-side component of a “movies” web application.
+    </p>
+    <h3>Intro</h3>
+    <p> The web application will provide users with access to information about different
+      movies, directors, and genres. Users will be able to sign up, update their
+      personal information, and create a list of their favorite movies.
+    </p>
+  </div>
 
-    <div class="container">
-        <table class="table table-bordered ">
-            <thead class="table-primary text-center">
-                <tr>
-                    <th scope="col">Description</th>
-                    <th scope="col">URL</th>
-                    <th scope="col">HTTP Method</th>
-                    <th scope="col">Requests body data format</th>
-                    <th scope="col">Requests body data format</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Allow new users to register</td>
-                    <td>/users</td>
-                    <td>POST</td>
-                    <td>A JSON object holding data about the user to add, structured like: <br>
-                        <code class="text-primary">
+  <div class="container">
+    <table class="table table-bordered ">
+      <thead class="table-primary text-center">
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">URL</th>
+          <th scope="col">HTTP Method</th>
+          <th scope="col">Requests body data format</th>
+          <th scope="col">Requests body data format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>A JSON object holding data about the user to add, structured like: <br>
+            <code class="text-primary">
                             {
                                 "username": "marioduro",<br>
                                 "password": "mario9988",<br>
@@ -49,9 +49,9 @@
                                 "birthday":"1992-12-18"
                             }
                         </code>
-                    </td>
-                    <td>A JSON object holding data about the user that was added, including an ID: <br>
-                        <code class="text-primary">
+          </td>
+          <td>A JSON object holding data about the user that was added, including an ID: <br>
+            <code class="text-primary">
                             {
                                 "username": "marioduro",<br>
                                 "password": "mario9988",<br>
@@ -62,16 +62,16 @@
                                 "__v": 0
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been
-                        added)</td>
-                    <td>/users/:username/movies/:movieId</td>
-                    <td>POST</td>
-                    <td>None</td>
-                    <td>A JSON object holding data on the user to whom the favorite movie was added <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been
+            added)</td>
+          <td>/users/:username/movies/:movieId</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>A JSON object holding data on the user to whom the favorite movie was added <br>
+            <code class="text-primary">
                         {
                             "_id": "62cf1de80d81998b05c5217c", <br>
                             "username": "elver_75",<br>
@@ -83,22 +83,22 @@
                             ] <br>
                         }
                          </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Return a list of ALL movies to the user</td>
-                    <td>/movies</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about all the movies</td>
-                </tr>
-                <tr>
-                    <td>Return data about a single movie by title to the user</td>
-                    <td>/movies/:title</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about a single movie <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Return a list of ALL movies to the user</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about all the movies</td>
+        </tr>
+        <tr>
+          <td>Return data about a single movie by title to the user</td>
+          <td>/movies/:title</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single movie <br>
+            <code class="text-primary">
                             { <br>
                                 "genre": { <br>
                                     "name": "Animated", <br>
@@ -118,29 +118,29 @@
                                 "featured": true <br>
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Return data about a single movie by genre to the user</td>
-                    <td>/movies/genre/:name</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about a single movie <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about a single movie by genre to the user</td>
+          <td>/movies/genre/:name</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single movie <br>
+            <code class="text-primary">
                             {
                                 "name": "Drama", <br>
                                 "description": "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Return data about a single movie by director to the user</td>
-                    <td>/movies/director/:name</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about a single movie <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about a single movie by director to the user</td>
+          <td>/movies/director/:name</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single movie <br>
+            <code class="text-primary">
                             {
                                 "name": "Jonathan Demme", <br>
                                 "bio": "Demme was the son of Dorothy Louise (née Rogers) and Robert Eugene Demme, a public relations executive. He was raised in Rockville Centre, New York and Miami, where he graduated from Southwest Miami High School before attending the University of Florida.", <br>
@@ -148,22 +148,22 @@
                                 "deathyear": "2017-04-25T22:00:00.000Z" 
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Return a list of All users</td>
-                    <td>/users</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about all the users</td>
-                </tr>
-                <tr>
-                    <td>Return an user by username</td>
-                    <td>/users/:username</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about an user by username <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Return a list of All users</td>
+          <td>/users</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about all the users</td>
+        </tr>
+        <tr>
+          <td>Return an user by username</td>
+          <td>/users/:username</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about an user by username <br>
+            <code class="text-primary">
                             {
                                 "_id": "62cf1e5d0d81998b05c5217d", <br>
                                 "username": "davidpower", <br>
@@ -174,14 +174,14 @@
                             }
                         </code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Allow users to update their user info (username)</td>
-                    <td>/users/:username</td>
-                    <td>PUT</td>
-                    <td>A JSON object holding data about the user to update, structured like: <br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user info (username)</td>
+          <td>/users/:username</td>
+          <td>PUT</td>
+          <td>A JSON object holding data about the user to update, structured like: <br>
+            <code class="text-primary">
                             {
                                 "username": "juliamaria123", <br>
                                 "password": "juliaamarillo0022UPDATE", <br>
@@ -189,9 +189,9 @@
                                 "birthday": "1988-04-18"
                             }
                         </code>
-                    </td>
-                    <td>A JSON object holding data about teh user update <br>
-                        <code class="text-primary">
+          </td>
+          <td>A JSON object holding data about teh user update <br>
+            <code class="text-primary">
                             {
                                 "_id": "62cee73300c3c35365cb6ccc", <br>
                                 "username": "juliamaria123", <br>
@@ -201,16 +201,16 @@
                                 "favoriteMovies": []
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has
-                        been removed)</td>
-                    <td>/users/:username/movies/movieId</td>
-                    <td>DELETE</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about the user<br>
-                        <code class="text-primary">
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has
+            been removed)</td>
+          <td>/users/:username/movies/movieId</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>A JSON object holding data about the user<br>
+            <code class="text-primary">
                             {
                                 "_id": "62cee73300c3c35365cb6ccc",
                                 "username": "juliamaria123",
@@ -222,22 +222,22 @@
                                 ]
                             }
                         </code>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Allow existing users to deregister (showing only a text that a user email has been removed)</td>
-                    <td>/users/:username</td>
-                    <td>DELETE</td>
-                    <td>None</td>
-                    <td>A text message indicates weather the existing user has been successfully delete</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Allow existing users to deregister (showing only a text that a user email has been removed)</td>
+          <td>/users/:username</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>A text message indicates weather the existing user has been successfully delete</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
