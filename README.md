@@ -20,4 +20,4 @@ To build the server-side component of "movies" web applicatiion. the web applica
 - Host database using MongoDB Atlas
 
 # Links 
-- Link to [documentation]. (https://wichoflix.herokuapp.com/documentation)
+- Link to [documentation](https://wichoflix.herokuapp.com/documentation)
