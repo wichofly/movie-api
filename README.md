@@ -20,5 +20,4 @@ To build the server-side component of "movies" web applicatiion. the web applica
 - Host database using MongoDB Atlas
 
 # Links 
-- Link to the live,hosted version. https://wichoflix.herokuapp.com/
-- Link to the project’s GitHub repository. https://github.com/wichofly/movie-api.git
+- Link to [documentation]. (https://wichoflix.herokuapp.com/documentation)
