@@ -1,5 +1,7 @@
 /* Integrating Mongoose to perform CRUD operations on MongoDB data.
 -----------------------------------------------------------------------------------*/
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 const Models = require('./model.js');
 
@@ -43,7 +45,7 @@ app.use(bodyParser.json()); // support parsing of application/json type post dat
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
 // Allows requests from all origins
-app.use(cors({ origin: '*' }));
+app.use(cors());
 
 // Allow certain origins to have access, replace app.use(cors()) and use:
 // let allowedOrigins = ['http://localhost:1234', 'http://localhost:8080', 'http://localhost:4200', 'https://wichoflix.herokuapp.com', 'https://wichoflix-client-react.netlify.app'];
