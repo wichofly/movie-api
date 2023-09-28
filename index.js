@@ -43,7 +43,7 @@ app.use(bodyParser.json()); // support parsing of application/json type post dat
 app.use(bodyParser.urlencoded({ extended: true })); //support parsing of application/x-www-form-urlencoded post data
 
 // Allows requests from all origins
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // Allow certain origins to have access, replace app.use(cors()) and use:
 // let allowedOrigins = ['http://localhost:1234', 'http://localhost:8080', 'http://localhost:4200', 'https://wichoflix.herokuapp.com', 'https://wichoflix-client-react.netlify.app'];
@@ -771,5 +771,4 @@ app.use((err, req, res, next) => {
  */
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
-  console.log('Listening on Port ' + port);
-});
+  console.log('Listening on Port ' + port)
