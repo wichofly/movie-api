@@ -2,7 +2,7 @@
 This project is all about the backend, or server-side, of the development process. I am using JavaScript, Node.js, and Express to create an API that can communicate between an app and a database, as well MongoDB to create my own non-relational database to go with it.
 
 # Objective
-To build the server-side component of "movies" web applicatiion. the web application  provides users with acces to information about different movies, directors, and genres. Users are able to sign up, update their personal information, and create a list of their favorite movies. 
+To build the server-side component of "movies" web application. the web application  provides users with access to information about different movies, directors, and genres. Users are able to sign up, update their personal information, and create a list of their favorite movies. 
 
 # Project dependencies 
 - JavaScript
