@@ -16,8 +16,8 @@ To build the server-side component of "movies" web application. the web applicat
 - Authentication and authorization into the API
     - Basic HTTP authentication
     - JWT (token-based) authentication
-- Host on the web using Heroku
+- Host on the web using Heroku and Render
 - Host database using MongoDB Atlas
 
 # Links 
-- Link to [documentation](https://wichoflix.herokuapp.com/documentation)
+- Link to [documentation](https://wichoflix.onrender.com/documentation)
